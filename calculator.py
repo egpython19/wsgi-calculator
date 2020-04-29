@@ -73,7 +73,7 @@ def multiply(*args):
 
 
 def divide(*args):
-    """ Returns a STRING with the quotient of the arguments """
+    """ Returns a STRING with the QUOTIENT of the arguments """
 
     quotient = int(args[0])
 
