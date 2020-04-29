@@ -32,10 +32,11 @@ def add(*args):
     except ValueError:
         raise
 
+    total = str(total)
+
     main_page = '<h3><a href="http://localhost:8080">home</a><h3>'
 
-    return f'<h1>The sum is: {str(total)}</h1>' \
-           f'{main_page}'
+    return f'<h1>The sum is: {total}</h1>{main_page}'
 
 
 def subtract(*args):
@@ -49,10 +50,11 @@ def subtract(*args):
     except ValueError:
         raise
 
+    difference = str(difference)
+
     main_page = '<h3><a href="http://localhost:8080">home</a><h3>'
 
-    return f'<h1>The difference is: {str(difference)}</h1>' \
-           f'{main_page}'
+    return f'<h1>The difference is: {difference}</h1>{main_page}'
 
 
 def multiply(*args):
@@ -66,10 +68,11 @@ def multiply(*args):
     except ValueError:
         raise
 
+    product = str(product)
+
     main_page = '<h3><a href="http://localhost:8080">home</a><h3>'
 
-    return f'<h1>The product is: {str(product)}</h1>' \
-           f'{main_page}'
+    return f'<h1>The product is: {product}</h1>{main_page}'
 
 
 def divide(*args):
@@ -80,13 +83,14 @@ def divide(*args):
     try:
         for arg in args[1:]:
             quotient /= int(arg)
-    except (ValueError, ZeroDivisionError):
+    except (ValueError, ZeroDivisionError, TypeError):
         raise
+
+    quotient = str(quotient)
 
     main_page = '<h3><a href="http://localhost:8080">home</a><h3>'
 
-    return f'<h1>The quotient is: {str(quotient)}</h1>' \
-           f'{main_page}'
+    return f'<h1>The quotient is: {quotient}</h1>{main_page}'
 
 
 def resolve_path(path):
